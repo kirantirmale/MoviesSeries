@@ -3,17 +3,22 @@ import React, { useEffect, useState } from "react";
 import { entries } from "../public/sample.json";
 import Title from "../components/Title";
 
-
 const Movies = () => {
   const [movieData, setMovieData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [imageLoadError, setImageLoadError] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const filteredData = entries.filter((item) => item.programType === "movie" && item.releaseYear >= 2010);
+    const filteredData = entries.filter(
+      (item) =>
+        item.programType === "movie" &&
+        item.releaseYear >= 2010 &&
+        item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
     const sortedData = filteredData.sort((a, b) => a.title.localeCompare(b.title));
     setMovieData(sortedData.slice(0, 21));
-  }, []);
+  }, [searchQuery]);
 
   useEffect(() => {
     const delay = setTimeout(() => {
@@ -22,13 +27,16 @@ const Movies = () => {
     return () => clearTimeout(delay);
   }, []);
 
-  const fallbackImage =
-  "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-23.jpg";
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
+  const fallbackImage =
+    "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-23.jpg";
 
   return (
     <>
-      <Title title="Movies"/>
+      <Title title="Movies" handleSearchInputChange={handleSearchInputChange} />
       {isLoading ? (
         <h1 className="text-2xl main-h1">Loading.......</h1>
       ) : (
@@ -55,7 +63,7 @@ const Movies = () => {
                   <div className="p-4">
                     <p className="text-sm text-gray-600">{item.programType}</p>
                     <p className="text-lg font-bold mb-2">{item.title}</p>
-                    <p className="text-sm text-gray-600">Release  Year {item.releaseYear}</p>
+                    <p className="text-sm text-gray-600">Release Year {item.releaseYear}</p>
                   </div>
                 </div>
               </li>

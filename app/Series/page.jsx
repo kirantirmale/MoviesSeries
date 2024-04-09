@@ -1,19 +1,24 @@
-"use client"
-import { useEffect, useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Title from "../components/Title";
 import { entries } from "../public/sample.json";
-
 
 const Series = () => {
   const [seriesData, setSeriesData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [imageLoadError, setImageLoadError] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    const filteredData = entries.filter((item) => item.programType === "series" && item.releaseYear >= 2010);
+    const filteredData = entries.filter(
+      (item) =>
+        item.programType === "series" &&
+        item.releaseYear >= 2010 &&
+        item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
     const sortedData = filteredData.sort((a, b) => a.title.localeCompare(b.title));
     setSeriesData(sortedData.slice(0, 21));
-  }, []);
+  }, [searchQuery]);
 
   useEffect(() => {
     const delay = setTimeout(() => {
@@ -21,11 +26,17 @@ const Series = () => {
     }, 2000);
     return () => clearTimeout(delay);
   }, []);
-  const fallbackImage = "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-23.jpg";
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const fallbackImage =
+    "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-23.jpg";
 
   return (
     <>
-      <Title title="Series" />
+      <Title title="Series" handleSearchInputChange={handleSearchInputChange} />
       {isLoading ? (
         <h1 className="text-2xl top-25 main-h1">Loading.......</h1>
       ) : (

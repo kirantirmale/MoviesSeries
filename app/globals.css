@@ -45,3 +45,12 @@ color: white !important;
   background-color:rgb(26, 34, 44) ;
  
 }
+@media only screen and (max-width: 320px) {
+  .mob {
+    margin-top: 25px;
+  }
+  .cards{
+    margin-top: 200px;
+    
+  }
+}

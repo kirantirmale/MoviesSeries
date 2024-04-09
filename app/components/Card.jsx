@@ -12,7 +12,6 @@ export default function Home() {
                   <Link href="/Series" className="block max-w-sm py-16 px-8 sm:py-24 sm:px-12 bg-dark bgone border  border-gray-200 shadow  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                     <h5 className="mb-2 text-lg sm:text-2xl font-bold text-gray-100 dark:text-white">SERIES</h5>
                   </Link>
-            
                 <p className="text-left text-sm">Popular series</p>
               </div>
 
@@ -21,7 +20,6 @@ export default function Home() {
                   <Link href="/Movies" className="block max-w-sm py-16 px-8 sm:py-24 sm:px-12 bg-white bgone border border-gray-200 shadow  dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                     <h5 className="mb-2 text-lg sm:text-2xl font-bold text-gray-100 dark:text-white">MOVIES</h5>
                   </Link>
-              
                 <p className="text-left text-sm">Popular Movies</p>
               </div>
             </div>
