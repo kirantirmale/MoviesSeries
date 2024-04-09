@@ -49,6 +49,7 @@ color: white !important;
 @media only screen and (max-width: 320px) {
   .mob {
     margin-top: 25px;
+    padding: 15px;
   }
   .main-card{
     margin-top: 160px;
