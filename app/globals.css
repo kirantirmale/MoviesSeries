@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home {
+  height: auto;
+}
+.main-card {
+  margin-top: 120px;
+}
+.foot {
+  bottom: 0;
+}
+.cards {
+  padding: 5px;
+  margin-top: 130px;
+  margin-bottom: 75px;
+  /* height: auto; */
+  overflow: auto;
+max-height: 63vh;
+}
+.main-h1 {
+  text-align: center;
+  margin-top: 155px;
+  padding: 25px;
+}
+.card-1:hover {
+
+  box-shadow: rgba(9, 105, 231, 0.925) 0px 5px 15px;
+}
+.card-1{
+  transition: 0.6s;
+}
