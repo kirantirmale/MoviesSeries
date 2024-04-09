@@ -22,7 +22,7 @@ max-height: 63vh;
 .main-h1 {
   text-align: center;
   margin-top: 155px;
-  padding: 25px;
+  padding: 20px;
 }
 .card-1:hover {
 
@@ -50,7 +50,15 @@ color: white !important;
     margin-top: 25px;
   }
   .cards{
-    margin-top: 200px;
+    margin-top: 220px;
     
+  }
+  .main-card{
+    margin-top: 200px;
+  }
+  .main-h1 {
+    text-align: center;
+    margin-top: 200px;
+    padding: 20px;
   }
 }
