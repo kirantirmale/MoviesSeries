@@ -17,7 +17,7 @@
   margin-bottom: 75px;
   /* height: auto; */
   overflow: auto;
-max-height: 63vh;
+max-height: 66vh;
 }
 .main-h1 {
   text-align: center;
@@ -40,6 +40,7 @@ color: white !important;
   .main-head {
     padding: 15px;
   }
+
 }
 .bgone{
   background-color:rgb(26, 34, 44) ;
@@ -49,16 +50,24 @@ color: white !important;
   .mob {
     margin-top: 25px;
   }
-  .cards{
-    margin-top: 220px;
-    
-  }
   .main-card{
-    margin-top: 200px;
+    margin-top: 160px;
   }
   .main-h1 {
     text-align: center;
     margin-top: 200px;
     padding: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+ 
+  .mob{
+    padding: 20px !important;
+  }
+}
+@media only screen and (min-width: 768px) {
+ 
+  .mob{
+    padding: 20px !important;
   }
 }
