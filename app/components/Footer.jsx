@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
     <div>
-      <footer className="bg-white shadow dark:bg-gray-800 fixed bottom-0 w-full foot">
+      <footer className="bg-dark footer1 shadow dark:bg-gray-800 fixed bottom-0 w-full foot">
         <div className="w-full max-w-screen-xl mx-auto p-2 sm:p-8">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <ul className="flex flex-wrap items-center mb-4 sm:mb-0 text-sm sm:text-base font-medium text-gray-900 dark:text-white">
+            <ul className="flex flex-wrap items-center mb-4 sm:mb-0 text-sm sm:text-base font-medium text-gray-000 dark:text-white">
               <li>
                 <a href="#" className="hover:underline me-2 sm:me-4">Home</a>
               </li> 

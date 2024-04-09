@@ -31,3 +31,8 @@ max-height: 63vh;
 .card-1{
   transition: 0.6s;
 }
+
+.footer1{
+  background-color:rgb(26, 34, 44) ;
+color: white !important;
+}
