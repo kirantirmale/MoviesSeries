@@ -20,6 +20,7 @@ const Series = () => {
     setSeriesData(sortedData.slice(0, 21));
   }, [searchQuery]);
 
+
   useEffect(() => {
     const delay = setTimeout(() => {
       setIsLoading(false);
@@ -31,8 +32,7 @@ const Series = () => {
     setSearchQuery(event.target.value);
   };
 
-  const fallbackImage =
-    "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-23.jpg";
+  const fallbackImage = "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-23.jpg";
 
   return (
     <>
@@ -48,6 +48,7 @@ const Series = () => {
                   <div className="h-48 sm:h-64  p-4">
                     <img
                       src={item.images["Poster Art"].url}
+
                       onError={(e) => {
                         if (imageLoadError) {
                           setImageLoadError(true);
